@@ -25,14 +25,22 @@ class Files:
         with open(self.fName,"r",newline = "") as f1:
             readerObj = csv.reader(f1,delimiter = "|")
             l1 = list(readerObj)
+            l2 = []
             for i in range(len(l1)):
                 if name in l1[i]:
                     with open("rollback.csv","w",newline = "") as f2:
                         writerObj = csv.writer(f2, delimiter="|")
                         writerObj.writerow(l1[i])
                     self.back_lst.append(l1[i])
-                    l1.pop(i)
-                print("This name is not present please try again 😊")
+                elif name not in l1[i]:
+                    l2.append(l1[i])
+                    print("This name is not present please try again 😊")
+            f1.close()
+        with open(self.fName,"w",newline = "") as f3:
+            writerObj = csv.writer(f3, delimiter="|")
+            writerObj.writerows(l2)
+
+
    
     def rollback(self):
         print("Change will be rolledback")

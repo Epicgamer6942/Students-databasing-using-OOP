@@ -17,13 +17,7 @@ grade.add_studentgrade()
 course.add_studentcourse()
 marks.add_studentmarks()
 print(lst)
-files.add()
-files.commit()
-files.read()
-files.delrec("Lakshaya")
-files.read()
 files.rollback()
-files.read()
 
 
 
