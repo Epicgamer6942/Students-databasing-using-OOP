@@ -17,7 +17,7 @@ grade.add_studentgrade()
 course.add_studentcourse()
 marks.add_studentmarks()
 print(lst)
-files.rollback()
+
 
 
 

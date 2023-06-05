@@ -1,4 +1,5 @@
 import random
+from s_csv import Files
 class Student:
     def __init__(self,name,lst):
         self.name = name
@@ -18,5 +19,12 @@ class Student:
         newName = input("Enter edited name:")
         self.lst[0] = newName
     
+    def get_student(self,num = len(Files.read())):
+        l1 = []
+        for i in Files.read():
+            l1.append(i[1])
+        return l1
         
+
+
             
